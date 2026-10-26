@@ -11,7 +11,8 @@
 <meta property="og:title" content="Aravind Reddy Kondapareddy – Logistics & Supply Chain, Sheffield">
 <meta property="og:description" content="Aravind Reddy Kondapareddy is an MSc Logistics and Supply Chain Management student at Sheffield Hallam University with warehouse experience, looking for part-time warehouse, inventory and logistics work in Sheffield.">
 <meta property="og:url" content="https://kondapareddyaravind-cyber.github.io/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Aravind Reddy Kondapareddy", "url": "https://kondapareddyaravind-cyber.github.io/", "jobTitle": "MSc Logistics & Supply Chain Management student", "affiliation": {"@type": "CollegeOrUniversity", "name": "Sheffield Hallam University"}, "address": {"@type": "PostalAddress", "addressLocality": "Sheffield", "addressCountry": "GB"}, "knowsAbout": ["Inventory management", "Procurement", "Warehousing", "Logistics", "Microsoft Excel"], "sameAs": ["https://www.linkedin.com/in/aravind-reddy-kondapareddy-18031338b/"]}</script>
+<meta property="og:image" content="https://kondapareddyaravind-cyber.github.io/photo.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Aravind Reddy Kondapareddy", "url": "https://kondapareddyaravind-cyber.github.io/", "image": "https://kondapareddyaravind-cyber.github.io/photo.jpg", "jobTitle": "MSc Logistics & Supply Chain Management student", "affiliation": {"@type": "CollegeOrUniversity", "name": "Sheffield Hallam University"}, "address": {"@type": "PostalAddress", "addressLocality": "Sheffield", "addressCountry": "GB"}, "knowsAbout": ["Inventory management", "Procurement", "Warehousing", "Logistics", "Microsoft Excel"], "sameAs": ["https://www.linkedin.com/in/aravind-reddy-kondapareddy-18031338b/"]}</script>
 <style>
   :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
   body { margin: 0; }
@@ -168,7 +169,42 @@
     background-image: linear-gradient(-45deg, var(--stripe) 25%, var(--ink) 25%, var(--ink) 50%, var(--stripe) 50%, var(--stripe) 75%, var(--ink) 75%);
     background-size: 40px 40px;
   }
-  .label-body { padding: 30px 30px 26px; display: grid; gap: 22px; }
+  .label-body {
+    padding: 30px 30px 26px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 168px;
+    grid-template-areas: "intro intro" "fields photo" "foot foot";
+    gap: 22px 28px;
+  }
+  .intro { grid-area: intro; min-width: 0; }
+  .label-body .fields { grid-area: fields; }
+  .label-foot { grid-area: foot; }
+  .photo {
+    grid-area: photo;
+    margin: 4px 6px 0 0;
+    justify-self: end;
+    align-self: start;
+    width: 160px;
+    max-width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+  }
+  .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+    background: var(--field);
+  }
+  .photo::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px dashed var(--stripe);
+  }
   h1 {
     font-family: var(--font-display);
     font-stretch: 78%;
@@ -508,7 +544,12 @@
   }
   @media (max-width: 640px) {
     .brand-name { display: none; }
-    .label-body { padding: 20px 18px; }
+    .label-body {
+      padding: 20px 18px;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "photo" "intro" "fields" "foot";
+    }
+    .photo { justify-self: start; width: 104px; margin: 8px 0 0 8px; }
     .fields, .facts { grid-template-columns: minmax(0, 1fr); }
     .field:nth-child(odd) { border-right: 0; }
     .field:nth-child(even) { padding-left: 0; }
@@ -537,6 +578,8 @@
     .bars::after { animation: scan 1.2s ease-in-out 1.3s both; }
     .barcode:hover .bars::after { animation: scan-again 1.2s ease-in-out both; }
     .avail .dot::after, .pulse::after { animation: ping 2.2s ease-out 1.6s infinite; }
+    .photo::before { animation: spin-in 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s both; }
+    @keyframes spin-in { from { transform: rotate(-120deg); opacity: 0; } to { transform: none; opacity: 1; } }
     .stop.now .node::before { animation: ring 2.2s ease-out 1s infinite; }
 
     @keyframes label-in { from { opacity: 0; transform: translateY(16px) rotate(-0.4deg); } to { opacity: 1; transform: none; } }
@@ -596,12 +639,13 @@
   <header class="label" id="top">
     <div class="stripe" aria-hidden="true"></div>
     <div class="label-body">
-      <div>
+      <div class="intro">
         <div class="eyebrow rise" style="--i:0">MSc Logistics &amp; Supply Chain Management</div>
         <h1><span class="ln"><span style="--i:0">Aravind Reddy</span></span> <span class="ln"><span style="--i:1">Kondapareddy</span></span></h1>
         <p class="sub rise" style="--i:1">Student at Sheffield Hallam University, with warehouse experience. Looking for part-time work in Sheffield.</p>
         <span class="avail rise" style="--i:2"><span class="dot" aria-hidden="true"></span>Available for part-time work</span>
       </div>
+      <figure class="photo rise" style="--i:3"><img src="photo.jpg" alt="Photo of Aravind Reddy Kondapareddy" width="160" height="160"></figure>
       <dl class="fields">
         <div class="field rise" style="--i:3"><dt>Based in</dt><dd>Sheffield, UK</dd></div>
         <div class="field rise" style="--i:4"><dt>Looking for</dt><dd>Part-time warehouse, inventory, procurement, logistics or operations work</dd></div>
