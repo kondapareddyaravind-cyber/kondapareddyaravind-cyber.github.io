@@ -500,6 +500,7 @@
   .formula { font-family: var(--font-mono); font-size: 14px; color: var(--accent-ink); }
 
   /* ---------- Posts ---------- */
+  .posts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
   .post {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -507,8 +508,10 @@
     padding: 22px 24px;
     display: grid;
     gap: 10px;
-    max-width: 680px;
+    min-width: 0;
   }
+  .post-source { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .post-source a { color: var(--accent-ink); }
   .post-meta { display: flex; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
   .post h3 { margin: 0; font-size: 20px; font-weight: 600; }
   .post p { margin: 0; }
@@ -554,7 +557,7 @@
     .field:nth-child(odd) { border-right: 0; }
     .field:nth-child(even) { padding-left: 0; }
     .barcode { justify-items: start; }
-    .cards { grid-template-columns: minmax(0, 1fr); }
+    .cards, .posts { grid-template-columns: minmax(0, 1fr); }
     .track-card { padding: 18px 16px 4px; }
     .calc { padding: 18px 16px 20px; }
     .contact-body { padding: 20px 18px; }
@@ -855,6 +858,15 @@
       <h2 id="posts-h">My posts</h2>
       <p class="lead">I share what I learn on LinkedIn.</p>
     </div>
+    <div class="posts">
+    <article class="post">
+      <div class="post-meta"><span>LinkedIn</span><span>27 Oct 2026</span></div>
+      <h3>Too many eggs in one basket?</h3>
+      <p>I read about SCALA's report "The Resilience Gap". Only 33% of businesses have fully put in place plans to deal with disruption, and 47% get more than half of their sales from just three customers.</p>
+      <p>A strong supply chain needs a plan B. For example, buying key items from more than one supplier.</p>
+      <p class="post-source">Source: <a href="https://aircargoweek.com/new-report-exposes-supply-chain-risk-for-firms/" target="_blank" rel="noopener">Air Cargo Week</a></p>
+      <a class="btn" href="https://www.linkedin.com/in/aravind-reddy-kondapareddy-18031338b/recent-activity/all/" target="_blank" rel="noopener">Read it on LinkedIn</a>
+    </article>
     <article class="post">
       <div class="post-meta"><span>LinkedIn</span><span>26 Oct 2026</span></div>
       <h3>What is safety stock?</h3>
@@ -862,6 +874,7 @@
       <p>Think about bread in a local shop. The shop knows how much it usually sells. But some days more people come in, or the delivery is late. Without extra stock, the shelf is empty and customers leave.</p>
       <a class="btn" href="https://www.linkedin.com/in/aravind-reddy-kondapareddy-18031338b/recent-activity/all/" target="_blank" rel="noopener">Read it on LinkedIn</a>
     </article>
+    </div>
   </section>
 
   <section id="contact" aria-labelledby="contact-h">
